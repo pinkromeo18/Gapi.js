@@ -59,6 +59,7 @@ const base = `${host}/repos/${owner}/${repo}/`
 const file = path||''
 
 
+
 o.sha = null /////////
 
 o.isget=async ()=>{
@@ -68,7 +69,12 @@ o.sha = res.sha
 if(oldsha===null||oldsha===undefined) return  true;
 return oldsha===o.sha ? false : true;
 }
-o.get=async ()=>{}
+
+o.get=async ()=>{
+  let res = await _get()
+  let d=await base64Decode(res.content)
+  return d
+}
 o.put=async ()=>{}
 
 return Object.assing({},o);

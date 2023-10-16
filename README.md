@@ -30,4 +30,16 @@ await apiDekin.isget();
 await apiDekin.get();
 await apiDekin.put(data);
 
+function Gapi(auth,owner,repo,path){
+ var o={}
+ o.env={}
+ o.env.sha = null;
+
+ o.isget=async ()=>{}
+ o.get=async ()=>{}
+ o.put=async ()=>{}
+
+ return Object.assing({},o);
+}
+
 ````

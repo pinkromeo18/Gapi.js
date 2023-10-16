@@ -44,6 +44,41 @@ o.get=async ()=>{}
 o.put=async ()=>{}
 
 return Object.assing({},o);
+
+ function _get= async ()=>{
+      var file = o.env.path||''
+      var url = base + file
+      var method ='GET'
+      var headers = { 
+        accept,
+        authorization
+      }
+      var body = void 0
+
+      var res = await fetch(url,{method,headers,body})
+      .then(d=>d.json())
+      .catch(e=>void 0)
+      if(!res) return res
+      return res
+    }
+
 }
 
 ````
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

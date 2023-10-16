@@ -75,7 +75,37 @@ o.get=async ()=>{
   let d=await base64Decode(res.content)
   return d
 }
-o.put=async ()=>{}
+o.put=async (dat)=>{
+      var url = base + file
+      var method ='PUT'
+      var headers = { 
+        accept,
+        authorization,
+        "content-type": content_type
+      }
+      var sha=o.sha
+      var message = ""+Date.now()
+      //content
+      var content = await base64Encode(dat)
+
+      var body = {
+        sha,
+        message,
+        content,
+      }
+
+      if(!body.sha) delete body.sha;
+      body =JSON.stringify(body)
+
+      var res = await fetch(url,{method,headers,body})
+      .then(d=>d.json())
+      .catch(e=>void 0)
+      if(!res) return res
+      return res
+    }    
+
+
+
 
 return Object.assing({},o);
 

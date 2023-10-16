@@ -53,7 +53,7 @@ return Object.assing({},o);
       var method ='GET'
       var headers = { 
         accept,
-        auth
+        authorization
       }
       var body = void 0
 

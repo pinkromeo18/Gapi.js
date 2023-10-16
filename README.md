@@ -32,12 +32,13 @@ await apiDekin.put(data);
 
 function Gapi(auth,owner,repo,path){
 var o={}
-o.env={
-auth:auth,
-repo:repo,
-path:path,
-sha: null,
-}
+ const authorization ="token "+auth;
+ const accept = "application/vnd.github.v3+json"
+ const content_type = "application/json; charset=utf-8"    
+ const host = 'https://api.github.com'
+ const base = host + "/repos"+"/"+owner+"/"+repo+"/"
+
+o.sha = null /////////
 
 o.isget=async ()=>{}
 o.get=async ()=>{}
@@ -51,7 +52,7 @@ return Object.assing({},o);
       var method ='GET'
       var headers = { 
         accept,
-        authorization
+        auth
       }
       var body = void 0
 

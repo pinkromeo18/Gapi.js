@@ -42,7 +42,13 @@ const file = path||''
 
 o.sha = null /////////
 
-o.isget=async ()=>{}
+o.isget=async ()=>{
+  let oldsha = o.sha;
+  let res = await _get()
+  o.sha = res.sha
+  if(oldsha===null||oldsha===undefined) return  true;
+  return oldsha===o.sha ? false : true;
+}
 o.get=async ()=>{}
 o.put=async ()=>{}
 

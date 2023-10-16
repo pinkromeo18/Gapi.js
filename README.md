@@ -33,6 +33,10 @@ await apiDekin.put(data);
 function Gapi(auth,owner,repo,path){
  var o={}
  o.env={}
+ o.env.auth =auth;
+ o.env.owner =owner;
+ o.env.repo =repo;
+ o.env.path =path;
  o.env.sha = null;
 
  o.isget=async ()=>{}

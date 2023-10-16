@@ -31,19 +31,19 @@ await apiDekin.get();
 await apiDekin.put(data);
 
 function Gapi(auth,owner,repo,path){
- var o={}
- o.env={}
- o.env.auth =auth;
- o.env.owner =owner;
- o.env.repo =repo;
- o.env.path =path;
- o.env.sha = null;
+var o={}
+o.env={
+auth:auth,
+repo:repo,
+path:path,
+sha: null,
+}
 
- o.isget=async ()=>{}
- o.get=async ()=>{}
- o.put=async ()=>{}
+o.isget=async ()=>{}
+o.get=async ()=>{}
+o.put=async ()=>{}
 
- return Object.assing({},o);
+return Object.assing({},o);
 }
 
 ````

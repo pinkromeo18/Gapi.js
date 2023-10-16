@@ -13,7 +13,7 @@ fileGirls: "girls.txt",
 filePhone: "phone.txt",
 fileDekin: "dekin.txt"
 }
-var {auth,owner,repo} =env;
+var {auth,owner,repo,fileGirls,filePhone,fileDekin} =env;
 
 var apiGirls=Gapi(auth,owner,repo,fileGirls);
 await apiGirls.isget();

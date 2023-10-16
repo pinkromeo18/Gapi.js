@@ -36,7 +36,8 @@ var o={}
  const accept = "application/vnd.github.v3+json"
  const content_type = "application/json; charset=utf-8"    
  const host = 'https://api.github.com'
- const base = host + "/repos"+"/"+owner+"/"+repo+"/"
+ const base = `${host}/repos/${owner}/${repo}/`
+
 
 o.sha = null /////////
 

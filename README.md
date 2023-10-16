@@ -55,7 +55,7 @@ return Object.assing({},o);
       }
       var body = void 0
 
-      var res = await fetch(url,{method,headers,body})
+      var res = await fetch(url,{method,headers,body,cache:'no-cache'})
       .then(d=>d.json())
       .catch(e=>void 0)
       if(!res) return res

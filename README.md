@@ -32,12 +32,12 @@ await apiDekin.put(data);
 
 function Gapi(auth,owner,repo,path){
 var o={}
- const authorization ="token "+auth;
- const accept = "application/vnd.github.v3+json"
- const content_type = "application/json; charset=utf-8"    
- const host = 'https://api.github.com'
- const base = `${host}/repos/${owner}/${repo}/`
- const file = path||''
+const authorization ="token "+auth;
+const accept = "application/vnd.github.v3+json"
+const content_type = "application/json; charset=utf-8"    
+const host = 'https://api.github.com'
+const base = `${host}/repos/${owner}/${repo}/`
+const file = path||''
 
 
 o.sha = null /////////
@@ -48,21 +48,21 @@ o.put=async ()=>{}
 
 return Object.assing({},o);
 
- function _get= async ()=>{
-      var url = base + file
-      var method ='GET'
-      var headers = { 
-        accept,
-        authorization
-      }
-      var body = void 0
+async function _get(){
+     var url = base + file
+     var method ='GET'
+     var headers = { 
+       accept,
+       authorization
+     }
+     var body = void 0
 
-      var res = await fetch(url,{method,headers,body,cache:'no-cache'})
-      .then(d=>d.json())
-      .catch(e=>void 0)
-      if(!res) return res
-      return res
-    }
+     var res = await fetch(url,{method,headers,body,cache:'no-cache'})
+     .then(d=>d.json())
+     .catch(e=>void 0)
+     if(!res) return res
+     return res
+   }
 
 }
 

@@ -37,6 +37,7 @@ var o={}
  const content_type = "application/json; charset=utf-8"    
  const host = 'https://api.github.com'
  const base = `${host}/repos/${owner}/${repo}/`
+ const file = path||''
 
 
 o.sha = null /////////
@@ -48,7 +49,6 @@ o.put=async ()=>{}
 return Object.assing({},o);
 
  function _get= async ()=>{
-      var file = o.env.path||''
       var url = base + file
       var method ='GET'
       var headers = { 
